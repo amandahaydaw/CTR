@@ -1,15 +1,17 @@
 let express = require("express");
 let app = express();
-
+// import the CORS system
+var cors = require('cors');
 //var app = require('express')();
 let http = require('http').createServer(app);
 let io = require('socket.io')(http);
 
 
 
+// enable CORS for all routes
+app.use(cors());
 
-
-var port = process.env.PORT || 8081;
+var port = process.env.PORT || 4040;
 
 app.use(express.static(__dirname + '/public'));
 
