@@ -7,7 +7,8 @@ copy . .
 expose 8080
 
 run npm install
+run npm install cors --save
 
 CMD [ "echo", "hello world!" ]
 
-CMD [ "npm", "start" ]
+CMD [ "node", "server.js" ]
