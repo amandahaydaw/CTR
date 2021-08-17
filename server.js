@@ -14,11 +14,21 @@ app.use(cors());
 var port = process.env.PORT || 4040;
 
 app.use(express.static(__dirname + '/public'));
-
+app.use(express.static(__dirname + '/'));
 app.get("/test", function(request, response) {
     var user_name = request.query.user_name;
     response.end("Hello " + user_name + "!");
 });
+
+
+
+// logout the user by clearing the current cookies and redirecting to the root
+app.get('/logout', function(req, res) {
+    res.clearCookie('session');
+    res.clearCookie('gravatar');
+    res.redirect('/home.html')
+});
+
 
 
 //socket test
