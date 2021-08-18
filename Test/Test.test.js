@@ -1,6 +1,6 @@
 const { Logger } = require('mongodb');
 const supertest = require('supertest');
-const config = require('./config/host.json');
+const config = require('../config/host.json');
 const request = supertest(config.host);
 describe('User Model Test for ALL feature file', () => {
 
